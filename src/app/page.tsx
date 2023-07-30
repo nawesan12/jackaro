@@ -31,6 +31,7 @@ export default function Home() {
           <li>
             <a
               href="https://instagram.com/jackaro.ar"
+              target="_blank"
               title="Instagram | Jackaro"
               className="flex items-center gap-2"
             >
