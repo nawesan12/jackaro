@@ -10,9 +10,9 @@ export default function Home() {
         </h2>
         <div className="flex flex-col items-center space-y-4 mt-24">
           <p className="text-gray-300 uppercase text-sm">
-            Podes ser el primero en enterarte del estreno ⚡
+            Atento a las novedades ⚡
           </p>
-          <form className="w-full flex items-center">
+          <form className="w-4/5 flex items-center">
             <input
               type="email"
               name="email"
