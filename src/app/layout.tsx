@@ -6,7 +6,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Jackaro | Ropa Urbana",
-  description: "",
+  description:
+    "Jackaro es una marca de ropa ubicada en Mar del Plata, Argentina. @jackaro.ar",
 };
 
 export default function RootLayout({
