@@ -78,7 +78,6 @@ export default function Carousel() {
             <svg
               className="w-4 h-4 text-white"
               aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 6 10"
             >
@@ -103,7 +102,6 @@ export default function Carousel() {
             <svg
               className="w-4 h-4 text-white"
               aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 6 10"
             >
@@ -120,7 +118,11 @@ export default function Carousel() {
         </button>
       </section>
       {/* @ts-ignore */}
-      <marquee className="border-y-4 border-black" direction="left">
+      <marquee
+        className="border-y-4 border-black"
+        behavior="scroll"
+        direction="left"
+      >
         Jackaro | Ropa Urbana | Wear | Jackaro | Stay bold to keep the style |
         Since 2023 | MDP{/* @ts-ignore */}
       </marquee>

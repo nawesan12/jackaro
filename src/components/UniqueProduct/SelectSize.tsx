@@ -1,7 +1,7 @@
 export default function SelectSize() {
   return (
     <>
-      <span className="mr-3">Size</span>
+      <span className="mr-3">Talle</span>
       <div className="relative">
         <select className="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-red-500 text-base pl-3 pr-10">
           <option>M</option>

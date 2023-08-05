@@ -10,3 +10,16 @@
   box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+  width: .7rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: black;
+  border: 2px solid white;
+  border-radius: 1rem;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+}
