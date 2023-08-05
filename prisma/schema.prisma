@@ -10,9 +10,60 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Color {
+  id      Int       @id @default(autoincrement())
+  color   String    @db.VarChar(50)
+  Product Product[]
+}
+
+model Size {
+  id      Int       @id @default(autoincrement())
+  size    String    @db.VarChar(10)
+  Product Product[]
+}
+
+model ProductType {
+  id      Int       @id @default(autoincrement())
+  type    String
+  Product Product[]
+}
+
+model Fabric {
+  id      Int       @id @default(autoincrement())
+  name    String    @default("100% algodon")
+  Product Product[]
+}
+
 model User {
   id       String @id
   fullname String @db.VarChar(250)
-  email    String @db.VarChar(250)
+  email    String @unique @db.VarChar(250)
   password String
+}
+
+model Product {
+  id            Int          @id @default(autoincrement())
+  name          String       @unique @db.VarChar(250)
+  price         Int
+  image         String       @db.VarChar(1000)
+  lore          String       @db.Text
+  color         Color        @relation(fields: [colorId], references: [id])
+  collection    Collection?  @relation(fields: [collectionId], references: [id])
+  collectionId  Int?
+  colorId       Int
+  size          Size?        @relation(fields: [sizeId], references: [id])
+  sizeId        Int?
+  rating        Int          @default(0)
+  votes         Int          @default(0)
+  fabric        Fabric?      @relation(fields: [fabricId], references: [id])
+  fabricId      Int?
+  ProductType   ProductType? @relation(fields: [productTypeId], references: [id])
+  productTypeId Int?
+}
+
+model Collection {
+  id       Int       @id @default(autoincrement())
+  name     String    @unique @db.VarChar(250)
+  lore     String    @db.Text
+  products Product[]
 }

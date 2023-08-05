@@ -6,6 +6,7 @@ type ProductProps = {
   image: string;
   price: string;
   collection: string;
+  lore: string;
 };
 
 export default function Product({
@@ -13,6 +14,7 @@ export default function Product({
   image,
   price,
   collection,
+  lore,
 }: ProductProps) {
   return (
     <li>

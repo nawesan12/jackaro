@@ -1,17 +1,17 @@
 import { prisma } from "@/database/client";
 import { NextResponse } from "next/server";
 
-export async function POST(req: Request) {
-  const desiredCollection = await req.json();
-
-  //@ts-ignore
-  const collection = await prisma.collection.findUnique({
-    where: {
-      name: desiredCollection,
+export async function GET() {
+  const collections = await prisma.collection.findMany({
+    select: {
+      id: true,
+      lore: true,
+      name: true,
+      products: true,
     },
   });
 
-  if (!collection) return NextResponse.redirect("/not-found");
+  if (!collections) return NextResponse.json({ error: true }, { status: 404 });
 
-  return NextResponse.json({ collection }, { status: 200 });
+  return NextResponse.json({ collections }, { status: 200 });
 }
